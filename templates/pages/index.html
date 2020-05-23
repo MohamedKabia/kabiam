@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="s-scroll-spy">
+  <div class="header bg-color" id="home">
+    <div class="toolbar">
+        <div class="container">
+            <div class="name" style="display:flex; align-items:center;"><span>
+                        <img src="{% static './img/mk.png' %}" alt="" class="" style="width: 90px; height:60px">
+            </span> Ka<span>b</span>ia</div>
+        <div class="spacer"></div>
+        <div class="nav-link">
+            <ul>
+                <li><a href="#home"  class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="mobile-nav-link">
+        <ul>
+            <li><a href="#home"  class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="menu-wrapper left-right-toggler">
+        <div class="hamburger-menu"></div>
+      </div>
+      <div class="container  h-100">
+        <div class="mt-70">
+            <div class="s-row space ">
+                <div class="s-col-lg-6 s-col-sm-12 s-order-sm-2">
+                    <div class="s-heading">Mohamed</div>
+                    <div class="s-heading secondary-text">Kabia</div>
+                    
+                    <div class="mt-30">
+                        <p>I am an ambitious, energetic person who has a 
+                            mature and responsible approach to any task that I undertake or situation 
+                            that I face. I have been described as a diligent and determined worker; once 
+                            I am given an assignment, I ensure that I see it.....</p>
+                            <a href="#about">
+                                <button class="mt-10 text">Read more</button>
+                            </a>   
+                    </div>
+
+                    <div class="mt-30">
+                        <div class="s-row">
+                            <div class="social">
+                                <a href="https://github.com/MohamedKabia" target="_blank"><button><span class="mdi mdi-github"></span> github</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-col-lg-4 s-col-sm-12 s-order-sm-3">
+                    <div class="s-card">
+                      <h2>Computer Programmer</h2>
+                    </div>
+                     <div class="card mt-30">
+                        <a href="#about">
+                            <img src="{% static './img/kabia.png' %}" alt="mohameda kabia" class=" responsive">
+                        </a>
+                     </div>
+
+                     <div class="card mt-30">
+                        <h2>News</h2>
+                        <p>Simplify 1.2 is on the the way with more components.
+                          The new release come's with components that work's with Vuejs.
+                        </p>
+                     </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>  
+
+   <!--About-->
+   <div id="about" class=" h-50 center-all" style="min-height: 60vh;">
+        <div class="container">
+            <div class="s-row dark-text">
+                <div class="s-col-lg-5 s-col-sm-12">
+                    <h1 class="s-heading light-text">About <span class="secondary-text">me</span></h1>
+                </div>
+                <div class="s-col-lg-7 s-col-sm-12 sm-overlay">
+                    <p>My name is Mohamed Kabia. I am an ambitious, energetic person who has a 
+                        mature and responsible approach to any task that I undertake or situation 
+                        that I face. I have been described as a diligent and determined worker; once 
+                        I am given an assignment, I ensure that I see it
+                        through to its completion. I also work very well in a group setting.</p>
+                        <br>
+                    <p> have always been interested in technology. My interest grew bigger after 
+                        I successfully built a wind turbine in high school. While in Konya last summer,
+                         I had the opportunity to work as an intern for MPG Makine Group. In my time there,
+                          I assisted in electrical installation as well as updating software on winch vehicles.
+                         I have also studied 3D designing with 3DS Max.</p>
+                        <br>
+                    <p>My main passion is programming. Throughout my 4-year stay in Turkey, I 
+                        have taught myself programming languages such as Python, JavaScript, and C. 
+                        I use what I have taught myself in
+                        order to create websites and work on embedded systems. IOT etc</p>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!---projects-->
+    <div id="projects">
+        <div class="container">
+            <div class="pr1">
+                <div class="s-row">
+            {% if projects %}
+                {% for project in projects %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                     <div class="s-col-lg-7 s-sm-12}">
+                           <img src="{{ project.image.url}}" alt="" class="responsive">
+                       </div>
+
+                       <div class="s-col-lg-5 s-col-sm-12 center-all dark-text">
+                            <div>
+                                <div class="text">
+                                    <h1 class="secondary-text ">{{project.title}} </h1>
+                                <p class="mt-10">{{project.description}}</p>
+                                </div>
+
+                                <div class="action mt-30">
+                                    <a href="{{ project.site_url.url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
+                                     <a href="{{ project.git_url.url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
+                                </div>
+                            </div>
+                       </div>
+                    {% else %}
+                       <div class="s-col-lg-5 s-col-sm-12 center-all dark-text">
+                            <div>
+                                <div class="text">
+                                    <h1 class="secondary-text ">{{project.title}} </h1>
+                                <p class="mt-10">{{project.description}}</p>
+                                </div>
+
+                                <div class="action mt-30">
+                                    <a href="{{ project.site_url.url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
+                                     <a href="{{ project.git_url.url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
+                                </div>
+                            </div>
+                       </div>
+
+                        <div class="s-col-lg-7 s-sm-12">
+                            <img src="{{ project.image.url}}" alt="" class="responsive">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <h1>Sorry There are no projects available</h1>
+            {% endif %}
+                    <hr>
+               </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contact" class="bg">
+        <div class="container">
+        <div class="s-row">
+            <div class=" s-col-sm-12 s-col-lg-4 s-col-md-5">
+                <div class="">Send me a message.</div>
+                <h3 class="secondary-text mt-10">You are one step closer to us working together.</h3>
+                <form  class="s-form mt-30" action="{% url 'contact'%}" method="POST">
+                    {% csrf_token %}
+                    <label for="name">Name/Company name</label>
+                    <input type="text" class="input" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" class="input" name="email" required>
+
+                    <label for="email">Message</label>
+                    <textarea name="message"  class="fluid" required></textarea>
+
+                    <div class="s-row">
+                         <div class="spacer"></div>
+                         <button ><span class="mdi mdi-send-lock-outline"></span> Send</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="s-col-lg-8 s-col-sm-12">
+                <div>
+                    <img src="{% static './img/colabo.svg' %}" alt="" class="responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<footer style="background-color: rgb(82, 78, 78);">
+    {% include 'pertials/__alert.html' %}
+     <!---back to top-->
+    <button class="icon btop secondary-text" id="btop">Top</button>
+    <div class="container">
+       <h1> Thank's for visiting</h1>
+    </div>
+</footer>
+{% endblock %}

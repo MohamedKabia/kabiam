@@ -1,0 +1,15 @@
+{% if messages %}
+{% for message in messages %}
+   <div class="s-alert" role="alert">
+       <div class="alert">
+           {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                Error:
+           {% else %}
+               {{ message.tags|title}}!
+            {% endif %}
+           {{ message }}
+       </div>
+       <div class="s-icon"><span class="mdi mdi-progress-close "></span></div>
+   </div>
+{% endfor %}
+{% endif %}

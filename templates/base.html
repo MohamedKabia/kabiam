@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KABIA</title>
+    <link rel="icon" href="{% static './img/mk.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'custum.css' %}">
+    <link rel="stylesheet" href="{% static 'grid.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.2.45/css/materialdesignicons.css">
+</head>
+<body>
+{% block content %}
+{% endblock %}
+<script src="{% static 'main.js' %}"></script>
+</body>
+</html>
