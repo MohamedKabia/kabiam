@@ -110,7 +110,7 @@
     <!---projects-->
     <div id="projects">
         <div class="container">
-            <div class="pr1">
+            <div class="lg-device">
                 <div class="s-row">
             {% if projects %}
                 {% for project in projects %}
@@ -127,8 +127,8 @@
                                 </div>
 
                                 <div class="action mt-30">
-                                    <a href="{{ project.site_url.url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
-                                     <a href="{{ project.git_url.url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
+                                    <a href="{{ project.site_url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
+                                     <a href="{{ project.git_url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
                                 </div>
                             </div>
                        </div>
@@ -141,8 +141,8 @@
                                 </div>
 
                                 <div class="action mt-30">
-                                    <a href="{{ project.site_url.url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
-                                     <a href="{{ project.git_url.url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
+                                    <a href="{{ project.site_url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
+                                     <a href="{{ project.git_url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
                                 </div>
                             </div>
                        </div>
@@ -155,8 +155,33 @@
             {% else %}
                 <h1>Sorry There are no projects available</h1>
             {% endif %}
-                    <hr>
                </div>
+            </div>
+            <div class="mobile-devices">
+                <div class="s-row">
+                    {% if projects %}
+                        {% for project in projects %}
+                            <div class="s-col-lg-7 s-sm-12}">
+                                   <img src="{{ project.image.url}}" alt="" class="responsive">
+                               </div>
+
+                               <div class="s-col-lg-5 s-col-sm-12 dark-text">
+                                    <div>
+                                        <div class="text">
+                                            <h1 class="secondary-text ">{{project.title}} </h1>
+                                        <p class="mt-10">{{project.description}}</p>
+                                        </div>
+
+                                        <div class="action mt-30">
+                                            <a href="{{ project.site_url}}" target="_blank"><button><span class="mdi mdi-monitor-cellphone"></span> Preview</button></a>
+                                             <a href="{{ project.git_url}}" target="_blank"><button><span class="mdi mdi-github"></span> Github</button></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <hr>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
             </div>
 

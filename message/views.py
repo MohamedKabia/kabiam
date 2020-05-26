@@ -21,7 +21,7 @@ def contact(request):
             'soon as possible. You can always message me at kabiaofficial@gmail.com.',
             'kabiaofficial@gmail.com',
             [email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
         return redirect('/')

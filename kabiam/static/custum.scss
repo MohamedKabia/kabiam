@@ -251,6 +251,11 @@ p{
 .s-center{
     text-align: center;
 }
+hr{
+    background-color: $bg;
+    width: 100%;
+    height: 1px;
+}
 .dark-text{
     color: $dark;
 }
@@ -306,6 +311,23 @@ input{
 @media (min-width: 992px) { 
     .container{
         width:950px;
+    }
+    .lg-device{
+        display: block;
+    }
+    .mobile-devices{
+        display: none;
+    }
+ }
+ @media (max-width: 992px) { 
+    .lg-device{
+        display: none;
+    }
+    .mobile-devices{
+        display: block;
+    }
+    .s-col-sm-12{
+        margin-top: 20px;
     }
  }
 
