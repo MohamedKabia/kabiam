@@ -39,7 +39,6 @@ catch(error){
 const scrollSpy=document.querySelector('.s-scroll-spy');
 const scrollSpyArr = Array.from(scrollSpy.children);
 let active =document.querySelector('.active');
-console.log(active)
 //section id and position
 const secPos ={}
 let secId = []

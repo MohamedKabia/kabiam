@@ -69,6 +69,44 @@ body p {
   font-weight: 300;
 }
 
+.octagon {
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#302A50), to(#F51448));
+  background: linear-gradient(#302A50, #F51448);
+  width: 90px;
+  height: 90px;
+  color: black;
+}
+
+.octagon .icon {
+  font-size: 30px;
+  color: #f1f1f1;
+}
+
+.center {
+  text-align: center;
+}
+
+.stack {
+  color: #3f3b3b;
+}
+
+.stack .s-col-sm-6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.stack .s-d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
 .bg-color {
   background: #302A50;
 }

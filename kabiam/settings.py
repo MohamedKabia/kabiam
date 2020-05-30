@@ -136,6 +136,6 @@ MESSAGE_TAGS = {
 #email setup
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'kabiaofficial@gmail.com'
-EMAIL_HOST_PASSWORD = 'kabiaofficial'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
